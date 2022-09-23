@@ -1,3 +1,35 @@
+@font-face {
+    font-family: "YeezySupply";
+    src: url(Assets/Fonts/VCR_OSD_MONO_1.001.ttf);
+}
+
+@font-face {
+    font-family: "Yeezy";
+    src: url(Assets/Fonts/TSTAR-PRO-Bold.otf);
+}
+
+.center {
+    /* border: 5px solid #FFFF00; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+    text-align: center;
+}
+
+.leftAlign{
+    text-align: left;
+}
+
+.rightAlign{
+    text-align: right;
+}
+
 body{
     background-color: #CCCCCC;
+    font-family: "YeezySupply";
+}
+
+h1{
+    font-family: "Yeezy";
 }
