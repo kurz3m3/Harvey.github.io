@@ -11,10 +11,44 @@
 <body>
     <section class="showcase">
         <header>
-            <h1 class="logo">HOME</h1>
+            <h1 class="logo"><a href="https://harveykyllonen.me">HOME</a></h1>
             <div class="toggle"></div>
         </header>
+        <video src="Assets/Videos/HARVE¥.mp4" muted loop autoplay></video>
+
+        <div class="overlay"></div>
+        <div class="text">
+            <h2>Harve¥</h2>
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio voluptates reprehenderit exercitationem quibusdam earum omnis nihil et aperiam ab beatae!</p>
+            <a href="#">Explore</a>
+        </div>
+
+        <br><br>
+        
+        <div class="social">
+            <ul>
+                <li><a href="https://github.com/GalacticBacn" target="_blank" rel="noopener noreferrer">
+                    <img src="Assets/github.png" alt="GitHub" width="30px" height="30px">
+                </a></li>
+                <br>
+                <li><a href="https://www.linkedin.com/in/harveykyllonen/" target="_blank" rel="noopener noreferrer">
+                    <img src="Assets/LinkedIn.png" alt="LinkedIn" width="30px" height="30px">
+                </a></li>
+            </ul>
+        </div>
+
     </section>
+
+    <div class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">NEWS</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
     <br>
     <h2><a>About Me</a></h2>
     <h2><a>Portfolio</a></h2>
@@ -23,11 +57,21 @@
     <br>
     <div class="center"><h1>HARVE¥</h1></div>
     <br>
-    <h3><a href="https://github.com/GalacticBacn" target="_blank" rel="noopener noreferrer">GitHub</a></h3>
     <h3><a href="mailto:harvey.kyllonen.369@gmail.com">Email Me</a></h3>
 
     <br>
+    <!--
     <img src="Assets/TranspSignature.png" alt="Harvey Signature" width="100px" height="50px" class="rightAlign">
+    -->
+    <script>
+        const menuToggle = document.querySelector('.toggle')
+        const showcase = document.querySelector('.showcase')
+
+        menuToggle.addEventListener('click', ()=>{
+            menuToggle.classList.toggle('active')
+            showcase.classList.toggle('active')
+        })
+    </script>
 </body>
 
 </html>
