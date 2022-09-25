@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <link rel="icon" href="Assets/HYIcon.png">
+    <meta charset="UTF=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="portfolio.css">
+    <title>HARVE¥</title>
+</head>
+
+<body>
+    <section class="showcase">
+        <header>
+            <h1 class="logo"><a href="index.html">HOME</a></h1>
+            <div class="toggle"></div>
+        </header>
+        <video src="Assets/Videos/HARVE¥.mp4" muted loop autoplay></video>
+        <div class="overlay"></div>
+        
+        <!--
+        <div class="text">
+            <p style="color: black;">My previous works:</p>
+        </div>-->
+
+        <br><br>
+
+    </section>
+
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <br>
+    <script>
+        const menuToggle = document.querySelector('.toggle')
+        const showcase = document.querySelector('.showcase')
+
+        menuToggle.addEventListener('click', ()=>{
+            menuToggle.classList.toggle('active')
+            showcase.classList.toggle('active')
+        })
+    </script>
+</body>
+
+</html>
