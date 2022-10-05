@@ -65,7 +65,7 @@
     position: relative;
     width: 60px;
     height: 60px;
-    background: url("Assets/Hamburger_icon.svg.png");
+    background: url("Assets/ZBurger.png");
     background-repeat: no-repeat;
     background-size: 30px;
     background-position: center;
@@ -99,14 +99,34 @@
     mix-blend-mode: overlay;
 }
 
+.portfolio{
+    color: black;
+    position: relative;
+    margin-top: 15%;
+    margin-left: 15%;
+    margin-right: 15%;
+    z-index: 10;
+}
+
+.portfolio a{
+    display: inline-block;
+    margin-right: 20px;
+    transition: 0.5s;
+}
+
+.portfolio a:hover{
+    transform: translateY(-15px);
+}
+
 .text{
+    color: black;
     position: absolute;
     top: 120px;
     z-index: 10;
 }
 
 .text h2{
-    font-size: 5em;
+    font-size: 3em;
     font-weight: 800;
     line-height: 1em;
     text-transform: uppercase;
