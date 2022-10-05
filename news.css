@@ -236,3 +236,10 @@ body{
 h1{
     font-family: "Yeezy";
 }
+
+img {
+    pointer-events: none;
+}
+video{
+    pointer-events: none;
+}

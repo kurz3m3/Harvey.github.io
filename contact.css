@@ -120,7 +120,7 @@
 }
 
 .text p{
-    font-size: 1.1em;
+    font-size: 1.5em;
     margin: 20px 0;
     font-weight: 400;
     max-width: 700px;
@@ -236,4 +236,11 @@ body{
 
 h1{
     font-family: "Yeezy";
+}
+
+img {
+    pointer-events: none;
+}
+video{
+    pointer-events: none;
 }
