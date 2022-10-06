@@ -113,34 +113,53 @@
 }
 
 .text h3{
-    font-size: 4em;
+    font-size: 3em;
     font-weight: 700;
     line-height: 1em;
     text-transform: uppercase;
 }
 
 .text p{
-    font-size: 1.1em;
-    margin: 20px 0;
+    /*
+
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    */
+
+    /*
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    */
+    background-color: #D9AFD9;
+    background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+
+
+
+
+    font-size: 1.38em;
+    margin: 40px 0;
     font-weight: 400;
-    max-width: 700px;
+    max-width: 1000px;
 }
 
+
 .text a {
-    display: inline-block;
-    font-size: 1em;
+    /*display: inline-block;*/
+    /*font-size: 1em;
     background: #CCCCCC;
     padding: 10px 30px;
     text-decoration: none;
+    */
     color: #111;
+    /*
     margin-top: 10px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 2px;*/
     transition: 0.2s;
 }
 
 .text a:hover{
-    letter-spacing: 6px;
+    letter-spacing: 2px;
 
 }
 
