@@ -108,6 +108,11 @@
     z-index: 10;
 }
 
+.portfolio img{
+    width: 400px;
+    height: 400px;
+}
+
 .portfolio a{
     display: inline-block;
     margin-right: 20px;
@@ -230,6 +235,7 @@
     }
 }
 
+
 .center {
     /* border: 5px solid #FFFF00; */
     display: block;
@@ -263,4 +269,135 @@ img {
 
 video{
     pointer-events: none;
+}
+
+
+
+
+@media only screen and (min-width: 960px) {
+    /* styles for browsers larger than 960px; */
+    .showcase header{
+        font-size: 1em;
+    }
+
+    .text h2{
+        font-size: 2em;
+    }
+
+    .portfolio img{
+        width:300px;
+        height:300px;
+    }
+
+}
+@media only screen and (min-width: 1440px) {
+    /* styles for browsers larger than 1440px; */
+
+    .showcase header{
+        font-size: 1em;
+    }
+
+    .text h2{
+        font-size: 3em;
+    }
+
+    .portfolio img{
+        width:400px;
+        height:400px;
+    }
+}
+@media only screen and (min-width: 2000px) {
+    /* for sumo sized (mac) screens */
+    .showcase header{
+        font-size: 2em;
+    }
+
+    .text h2{
+        font-size: 5em;
+    }
+
+    .portfolio img{
+        width: 600px;
+        height: 600px;
+    }
+}
+@media only screen and (max-device-width: 480px) {
+   /* styles for mobile browsers smaller than 480px; (iPhone) */
+   .showcase header{
+        font-size: 1em;
+    }
+
+    .text h2{
+        font-size: 1.8em;
+    }
+
+    .portfolio img{
+        width: 170px;
+        height: 170px;
+    }
+    .toggle{
+        position: relative;
+        left:35px;
+    }
+    
+    .toggle.active{
+        position: relative;
+    }
+    .showcase video{
+        object-fit: cover;
+    }
+    .social li a:hover{
+        transform: translateY(-10px);
+    }
+}
+@media only screen and (device-width: 768px) {
+   /* default iPad screens */
+   .showcase header{
+        font-size: 2em;
+    }
+
+    .text h2{
+        font-size: 5em;
+    }
+
+    .portfolio img{
+        width: 200px;
+        height: 200px;
+    }
+    .toggle{
+        position: relative;
+        left:35px;
+    }
+}
+/* different techniques for iPad screening */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+  /* For portrait layouts only */
+  .showcase header{
+    font-size: 2em;
+    }
+
+    .text h2{
+        font-size: 5em;
+    }
+
+    .portfolio img{
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+  /* For landscape layouts only */
+  .showcase header{
+    font-size: 2em;
+    }
+
+    .text h2{
+        font-size: 5em;
+    }
+
+    .portfolio img{
+        width: 200px;
+        height: 200px;
+    }
 }
