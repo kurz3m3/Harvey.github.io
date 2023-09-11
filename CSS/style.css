@@ -1,18 +1,18 @@
 @font-face {
     font-family: "YeezySupply";
-    src: url(Assets/Fonts/VCR_OSD_MONO_1.001.ttf);
+    src: url("../Assets/Fonts/VCR_OSD_MONO_1.001.ttf");
 }
 
 @font-face {
     font-family: "Yeezy";
-    src: url(Assets/Fonts/TSTAR-PRO-Bold.otf);
+    src: url("../Assets/Fonts/TSTAR-PRO-Bold.otf");
 }
 
 *{
     box-sizing: border-box;
     margin:0;
     padding:0;
-    font-family: "Yeezy";
+    font-family: "Yeezy", sans-serif;
 }
 
 .showcase{
@@ -65,7 +65,7 @@
     position: relative;
     width: 60px;
     height: 60px;
-    background: url("Assets/ZBurger.png");
+    background: url("../Assets/ZBurger.png");
     background-repeat: no-repeat;
     background-size: 30px;
     background-position: center;
@@ -73,7 +73,7 @@
 }
 
 .toggle.active{
-    background: url('Assets/x.png');
+    background: url('../Assets/x.png');
     background-repeat: no-repeat;
     background-size: 25px;
     background-position: center;
@@ -81,7 +81,6 @@
 
 .showcase video{
     position: absolute;
-
     top: 0;
     left: 0;
     width: 100%;
@@ -229,12 +228,12 @@
 
 body{
     background-color: #CCCCCC;
-    font-family: "YeezySupply";
+    font-family: "YeezySupply", serif;
     color: white;
 }
 
 h1{
-    font-family: "Yeezy";
+    font-family: "Yeezy", sans-serif;
 }
 
 img {
