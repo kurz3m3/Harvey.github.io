@@ -11,6 +11,7 @@ document.getElementById("reveal-button").addEventListener("click", function() {
         img.src = "https://media1.tenor.com/m/hz4kyNrxfn0AAAAd/kuromi-eat.gif";
     } else {
         // Replace the GIF with a new one when the button is clicked
+        console.log("Changing image to new GIF"); // Check if this line runs
         img.src = "https://media1.tenor.com/m/2xDjVO7wN30AAAAd/onegai-my-melody-kuromi.gif"; // Replace with your new GIF URL
     }
 });
