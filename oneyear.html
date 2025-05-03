@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Anniversary Quiz 💚</title>
+  <style>
+    body {
+      background-color: #c8d5b9; /* sage green */
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #quiz-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 500px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    .question {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .answers button {
+      background-color: #f0f0f0;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      margin: 0.5rem;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .answers button.correct {
+      background-color: #8bc34a !important; /* green */
+    }
+    .answers button.wrong {
+      background-color: #f44336 !important; /* red */
+    }
+    #final-message {
+      font-size: 1.3rem;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+<div id="quiz-container">
+  <img id="question-image" src="https://media.giphy.com/media/l0MYEqEzwMWFCg8rm/giphy.gif" alt="question image">
+  <div id="question" class="question">Loading...</div>
+  <div class="answers" id="answers"></div>
+  <div id="final-message" style="display:none; margin-top: 2rem;"></div>
+</div>
+
+<script>
+  const quiz = [
+    {
+      img: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTg1NGptdW44azdzbndsNDBqM21ib2FvcXVkYm43MzI2cjFiZTE0ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xTkcEPsJJ3OvS4IlAk/giphy.gif",
+      question: "Welcome Daniela, to the 1 year anniversary quiz! It's open note, and you have unlimited attempts! I love you so much, do your best :D",
+      options: ["wrong answer (try clicking me)", "next question (correct)", "wrong answer", "wrong answer"],
+      answer: 1
+    },
+    {
+      img: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ283bnNjczNndDUxcGk0b2U4dGI1N2ltdXMyb3Vrb2ZwcjY0b2NpNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IzXiddo2twMmdmU8Lv/giphy.gif",
+      question: "What day did we first meet IRL?",
+      options: ["January 3, 2025", "February 2, 2025", "December 20, 2024", "January 1, 2025"],
+      answer: 0
+    },
+    {
+      img: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGRvdjk2NXBhN21hdXIwZmVudXcybW4xd2pmZzFrMzgwMDVkY2N0NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fuEspo4rCaKshEUUsS/giphy.gif",
+      question: "What’s my go-to Starbucks drink?",
+      options: ["dragon drink latte", "mocha frappuccino", "mocha cookie crumble frappuccino", "caramel frappuccino"],
+      answer: 2
+    },
+    {
+      img: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOW9lbzNvaDhiazgyMDM4Zm9sNmEzbGdlamdqbWlsNHBoajdpYXE3MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vB6GQ7Ogc6j4I/giphy.gif",
+      question: "What was our first romance movie together?",
+      options: ["Shrek 2", "Titanic", "The Notebook", "Pretty Woman"],
+      answer: 3
+    },
+    {
+      img: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZG1haGhxZjk3ZWprZXZxbGVjcTV5cWVjN3d3OG9jNHUzcTVkZXJtdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/K4x1ZL36xWCf6/giphy.gif",
+      question: "Where did we first go out to eat together?",
+      options: ["McDonald's", "Chipotle", "HopCat", "Chili's"],
+      answer: 1
+    },
+    {
+      img: "https://media.giphy.com/media/l3vR85PnGsBwu1PFK/giphy.gif",
+      question: "Which of these shows have we watched together?",
+      options: ["Breaking Bad", "The Office", "The Good Place", "Dexter"],
+      answer: 2
+    },
+    {
+      img: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmI1dTQxNXVxYmE3aGh4bWNuZG5rZ2t3M3VzcWJ4ajJzOG13MHFmYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LVzaMExWBN7gEkVp7u/giphy.gif",
+      question: "Which day did you first DM me?",
+      options: ["3/24/2024", "4/22/2024", "11/01/2023", "Yesterday"],
+      answer: 0
+    },
+    {
+      img: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExendlMTNseGp4MDdnYTNnaXkyNm81MjVxNnQxdW16cjVxdTM0ODRjayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jKaFXbKyZFja0/giphy.gif",
+      question: "Which of these foods have I recently been eating the most?",
+      options: ["Ramen", "Pineapple pizza", "Hot dogs", "Tofu"],
+      answer: 2
+    },
+    {
+      img: "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXQ0end2bTBienkxejd3ZWlqeGh2MnkzOGJicHFucGRydmpwdGcwZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lqMg6hf8Mie9cvsrmi/giphy.gif",
+      question: "What animal would you be?",
+      options: ["Wolf", "Horse", "Dog", "Hippo"],
+      answer: 3
+    },
+    {
+      img: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXpoYjUydmhnM2F6a3N0bWV6ZG9zNmJ0MnBkMW1mOGJpMGs1bWdhdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jld8Thvh1WviWaOlAu/giphy.gif",
+      question: "What is my favorite city of these?",
+      options: ["Boston", "Seattle", "Denver", "Atlanta"],
+      answer: 0
+    },
+    {
+      img: "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXk5NzRyMHI0NzlscHY3OHMyZHN3ZnJmcDdmeDZ6azdvd2Y4MHR5ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4rONkkYKUUDe0/giphy.gif",
+      question: "Am I the bestest boyfriend ever?",
+      options: ["Yes (you have no choice)"],
+      answer: 0
+    }
+  ];
+
+  let current = 0;
+
+  function showQuestion() {
+    const q = quiz[current];
+    document.getElementById('question-image').src = q.img;
+    document.getElementById('question').textContent = q.question;
+
+    const answersDiv = document.getElementById('answers');
+    answersDiv.innerHTML = '';
+
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.textContent = opt;
+      btn.onclick = () => checkAnswer(btn, i === q.answer);
+      answersDiv.appendChild(btn);
+    });
+  }
+
+  function checkAnswer(button, isCorrect) {
+    if (isCorrect) {
+      button.classList.add('correct');
+      const buttons = document.querySelectorAll('#answers button');
+      buttons.forEach(btn => btn.disabled = true);
+      setTimeout(() => {
+        current++;
+        if (current < quiz.length) {
+          showQuestion();
+        } else {
+          showFinalMessage();
+        }
+      }, 800);
+    } else {
+      button.classList.add('wrong');
+      setTimeout(() => button.classList.remove('wrong'), 600);
+    }
+  }
+
+  function showFinalMessage() {
+    document.getElementById('question-image').style.display = 'none';
+    document.getElementById('question').style.display = 'none';
+    document.getElementById('answers').style.display = 'none';
+    document.getElementById('final-message').style.display = 'block';
+    document.getElementById('final-message').textContent =
+            `I love you so much my dear, I hope we get another 50+ years together! Ever since I met you, you've been a huge light in my life. I'm so proud of how far we've come and we have so much further to go!\n\nI love you my princess, happy 1 year anniversary 💙`;
+  }
+
+  showQuestion();
+</script>
+</body>
+</html>
